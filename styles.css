@@ -150,8 +150,54 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-.navbar-brand i {
-    color: var(--accent-orange);
+.navbar-logo {
+    height: 30px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .navbar-logo {
+    transform: scale(1.05);
+}
+
+.navbar > .container {
+    position: relative;
+}
+
+.navbar-collapse {
+    background: transparent;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .navbar > .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .navbar-collapse {
+        background: var(--card-bg);
+        border-radius: 8px;
+        padding: 1rem;
+    }
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(196, 160, 98, 0.1);
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(196, 160, 98, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
 }
 
 .nav-link {
@@ -162,10 +208,36 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
     padding: 0.5rem 1rem !important;
     transition: color 0.3s ease;
+    line-height: 1;
 }
 
 .nav-link:hover {
     color: var(--accent-gold) !important;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 0.5rem 1rem;
+        background: rgba(20, 25, 32, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(196, 160, 98, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+
+    .nav-item:last-child {
+        margin: 0.5rem 0;
+    }
 }
 
 /* Hero Section */
@@ -206,11 +278,35 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
+.hero-logo-container {
+    margin-bottom: 2rem;
+}
+
+.hero-logo {
+    width: 300px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 2px rgba(196, 160, 98, 0.2))
+               drop-shadow(0 0 4px rgba(196, 160, 98, 0.2));
+    }
+    to {
+        filter: drop-shadow(0 0 8px rgba(196, 160, 98, 0.6))
+               drop-shadow(0 0 12px rgba(196, 160, 98, 0.4));
+    }
+}
+
 .hero-title {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 900;
     margin-bottom: 2rem;
     line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8),
+                 0 0 20px rgba(196, 160, 98, 0.3);
 }
 
 .hero-subtitle {
@@ -220,6 +316,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
 }
 
 .scroll-indicator {
@@ -1036,6 +1133,17 @@ footer {
     border-top: 1px solid rgba(196, 160, 98, 0.1);
 }
 
+.footer-logo {
+    height: 30px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
 .social-link {
     color: var(--text-secondary);
     font-size: 1.5rem;
@@ -1084,37 +1192,157 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Section Spacing */
     .section-full {
-        padding: 6rem 0;
+        padding: 4rem 0;
         margin-bottom: 1rem;
+        min-height: auto;
     }
     
     .section-full::before,
     .section-full::after {
-        height: 30px;
+        height: 20px;
     }
     
     .section-full::before {
-        top: -30px;
+        top: -20px;
     }
     
     .section-full::after {
-        bottom: -30px;
+        bottom: -20px;
+    }
+
+    /* Navigation */
+    .navbar {
+        padding: 1rem 0;
     }
 
     .navbar-brand {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
+    .nav-link {
+        padding: 0.5rem 0 !important;
+        text-align: center;
+    }
+
+    /* Hero Section */
     .hero-content {
         padding: 0 1rem;
     }
 
-    .guild-card, .stat-card {
-        margin-bottom: 1rem;
+    .hero-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Cards & Grids */
+    .guild-card, 
+    .stat-card, 
+    .territory-card,
+    .rank-card,
+    .join-info-card {
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .territory-stats {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
+    }
+
+    /* Typography */
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem !important;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    /* Form Elements */
+    .join-form {
+        padding: 1.5rem;
+    }
+
+    .form-control {
+        padding: 0.6rem;
+    }
+
+    /* Buttons */
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        margin-bottom: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    .d-flex.justify-content-center.gap-3 {
+        flex-direction: column;
+    }
+
+    /* Timeline */
+    .process-timeline {
+        padding-left: 2rem;
+    }
+
+    .step-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+        left: -2rem;
+    }
+
+    /* Stats & Numbers */
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 576px) {
+    .section-full {
+        padding: 3rem 0;
+    }
+
+    .hero-title {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+    }
+
+    .guild-card, 
+    .stat-card, 
+    .territory-card,
+    .rank-card,
+    .join-info-card {
+        padding: 1.25rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .guild-icon,
+    .territory-icon,
+    .rank-icon,
+    .header-icon {
+        font-size: 2rem;
+    }
+
+    .guild-title {
+        font-size: 1.25rem;
     }
 }
