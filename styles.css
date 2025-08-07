@@ -1168,14 +1168,17 @@ footer {
 }
 
 .footer-logo {
-    height: 30px;
+    height: 60px;
     width: auto;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(196, 160, 98, 0.2));
 }
 
 .footer-logo:hover {
     opacity: 1;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(196, 160, 98, 0.4));
 }
 
 .footer-main {
