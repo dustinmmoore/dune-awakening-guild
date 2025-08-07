@@ -150,6 +150,12 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    .navbar-brand .brand-text {
+        display: none;
+    }
+}
+
 .navbar-logo {
     height: 30px;
     width: auto;
@@ -247,6 +253,11 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    #hero {
+        margin-top: 56px;
+    }
+}
 
 
 .hero-bg::after {
@@ -276,7 +287,10 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
     max-width: 900px;
     margin: 0 auto;
+    padding: 0;
 }
+
+
 
 .hero-logo-container {
     margin-bottom: 2rem;
@@ -287,6 +301,12 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
     margin-bottom: 1.5rem;
     animation: glow 3s ease-in-out infinite alternate;
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        width: 200px; /* Smaller logo on mobile */
+    }
 }
 
 @keyframes glow {
@@ -328,11 +348,25 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+@media (max-width: 768px) {
+    .scroll-indicator {
+        bottom: -1rem;
+    }
+}
+
 .scroll-indicator a {
     color: var(--text-primary);
     font-size: 2rem;
     animation: bounce 2s infinite;
     display: block;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .scroll-indicator a {
+        font-size: 2.5rem;
+        color: var(--accent-gold);
+    }
 }
 
 @keyframes bounce {
