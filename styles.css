@@ -10,7 +10,7 @@
     --accent-red: #8b3a2b;
 }
 
-/* Base Styles */
+
 html {
     scroll-behavior: smooth;
 }
@@ -24,8 +24,8 @@ body {
     overflow-x: hidden;
 }
 
-/* Section Styles */
-/* Section Transition */
+
+
 .section-full::before {
     content: '';
     position: absolute;
@@ -57,7 +57,7 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Add border to all sections except hero */
+
 section:not(#hero).section-full {
     border-bottom: 1px solid rgba(196, 160, 98, 0.1);
 }
@@ -87,7 +87,7 @@ section:not(#hero).section-full {
         rgba(10, 10, 10, 0.9));
 }
 
-/* Special overlay for hero section */
+
 .hero-bg {
     position: absolute;
     top: 0;
@@ -112,13 +112,13 @@ section:not(#hero).section-full {
     background-color: var(--background);
 }
 
-/* Remove bottom border from last section */
+
 section#join.section-full {
     border-bottom: none;
     margin-bottom: 0;
 }
 
-/* Typography */
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Orbitron', sans-serif;
     color: var(--accent-gold);
@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.1em;
 }
 
-/* Navigation */
+
 .navbar {
     background-color: rgba(10, 10, 10, 0.85);
     padding: 1.5rem 0;
@@ -246,7 +246,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Hero Section */
+
 .hero {
     text-align: center;
     position: relative;
@@ -305,7 +305,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
     .hero-logo {
-        width: 200px; /* Smaller logo on mobile */
+        width: 200px;
     }
 }
 
@@ -332,11 +332,39 @@ h1, h2, h3, h4, h5, h6 {
 .hero-subtitle {
     font-size: 1.2rem;
     color: var(--text-secondary);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.guild-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.highlight-item i {
+    font-size: 1.2rem;
+    color: var(--accent-orange);
+}
+
+@media (max-width: 768px) {
+    .guild-highlights {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
 }
 
 .scroll-indicator {
@@ -381,7 +409,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Buttons */
+
 .btn-primary {
     background: var(--accent-orange);
     color: var(--text-primary);
@@ -421,14 +449,14 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--accent-gold);
 }
 
-/* Lead Text */
+
 .lead {
     font-size: 1.25rem;
     color: var(--text-secondary);
     line-height: 1.8;
 }
 
-/* Info Cards */
+
 .info-card {
     background: linear-gradient(145deg, var(--card-bg), rgba(255, 87, 34, 0.1));
     border: 1px solid var(--accent-orange);
@@ -468,7 +496,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 24px;
 }
 
-/* Stats Section */
+
 .stat-card {
     background: var(--card-bg);
     border: 1px solid rgba(196, 160, 98, 0.1);
@@ -497,7 +525,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 2px;
 }
 
-/* Territory Cards */
+
 .territory-card {
     background: linear-gradient(145deg, var(--card-bg), rgba(255, 87, 34, 0.1));
     border: 1px solid var(--accent-orange);
@@ -565,7 +593,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--accent-orange);
 }
 
-/* Territory Stats */
+
 .territory-stats {
     background: var(--card-bg);
     border: 1px solid rgba(196, 160, 98, 0.1);
@@ -625,7 +653,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 24px;
 }
 
-/* Rank Cards */
+
 .rank-card {
     background: linear-gradient(145deg, var(--card-bg), rgba(255, 87, 34, 0.1));
     border: 1px solid var(--accent-orange);
@@ -702,7 +730,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px;
 }
 
-/* Progression Path */
+
 .progression-path {
     background: var(--card-bg);
     border: 1px solid rgba(196, 160, 98, 0.1);
@@ -764,7 +792,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-/* Benefits Grid */
+
 .rank-benefits-overview {
     background: var(--card-bg);
     border: 1px solid rgba(196, 160, 98, 0.1);
@@ -808,7 +836,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-/* Role Lists */
+
 .role-list {
     margin-top: 2rem;
 }
@@ -845,7 +873,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
 }
 
-/* Operation Stats */
+
 .operation-stats,
 .operation-highlights {
     background: var(--card-bg);
@@ -893,7 +921,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 24px;
 }
 
-/* Cards */
+
 .guild-card {
     background: linear-gradient(145deg, var(--card-bg), rgba(255, 87, 34, 0.1));
     border: 1px solid var(--accent-orange);
@@ -930,7 +958,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.5rem;
 }
 
-/* Join Info Cards */
+
 .join-info-card {
     background: linear-gradient(145deg, var(--card-bg), rgba(255, 87, 34, 0.1));
     border: 1px solid var(--accent-orange);
@@ -994,7 +1022,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 24px;
 }
 
-/* Form Elements */
+
 .join-form {
     background: linear-gradient(145deg, var(--card-bg), rgba(255, 87, 34, 0.1));
     border: 1px solid var(--accent-orange);
@@ -1060,7 +1088,7 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--accent-orange);
 }
 
-/* Application Process */
+
 .process-card,
 .contact-card {
     background: linear-gradient(145deg, var(--card-bg), rgba(255, 87, 34, 0.1));
@@ -1133,7 +1161,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-/* Contact Card */
+
 .contact-card {
     text-align: center;
 }
@@ -1160,7 +1188,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-2px);
 }
 
-/* Footer */
+
 footer {
     background-color: var(--background);
     border-top: 1px solid rgba(196, 160, 98, 0.1);
@@ -1171,13 +1199,11 @@ footer {
     width: auto;
     opacity: 0.9;
     transition: all 0.3s ease;
-    filter: drop-shadow(0 0 8px rgba(196, 160, 98, 0.2));
 }
 
 .footer-logo:hover {
     opacity: 1;
     transform: scale(1.05);
-    filter: drop-shadow(0 0 12px rgba(196, 160, 98, 0.4));
 }
 
 .footer-main {
@@ -1230,7 +1256,7 @@ footer {
     transform: translateY(-2px);
 }
 
-/* Animations */
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -1246,7 +1272,7 @@ footer {
     animation: fadeUp 0.6s ease-out forwards;
 }
 
-/* Custom Scrollbar */
+
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -1264,9 +1290,9 @@ footer {
     background: var(--text-primary);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
-    /* Section Spacing */
+
     .section-full {
         padding: 4rem 0;
         margin-bottom: 1rem;
@@ -1286,7 +1312,7 @@ footer {
         bottom: -20px;
     }
 
-    /* Navigation */
+    
     .navbar {
         padding: 1rem 0;
     }
@@ -1300,7 +1326,7 @@ footer {
         text-align: center;
     }
 
-    /* Hero Section */
+    
     .hero-content {
         padding: 0 1rem;
     }
@@ -1315,7 +1341,7 @@ footer {
         margin-bottom: 2rem;
     }
 
-    /* Cards & Grids */
+
     .guild-card, 
     .stat-card, 
     .territory-card,
@@ -1334,7 +1360,7 @@ footer {
         margin-top: 1.5rem;
     }
 
-    /* Typography */
+    
     .section-title {
         font-size: 1.75rem;
         margin-bottom: 2rem !important;
@@ -1344,7 +1370,7 @@ footer {
         font-size: 1.1rem;
     }
 
-    /* Form Elements */
+    
     .join-form {
         padding: 1.5rem;
     }
@@ -1353,7 +1379,7 @@ footer {
         padding: 0.6rem;
     }
 
-    /* Buttons */
+    
     .btn-primary,
     .btn-secondary {
         width: 100%;
@@ -1365,7 +1391,7 @@ footer {
         flex-direction: column;
     }
 
-    /* Timeline */
+
     .process-timeline {
         padding-left: 2rem;
     }
@@ -1377,7 +1403,7 @@ footer {
         left: -2rem;
     }
 
-    /* Stats & Numbers */
+
     .stat-number {
         font-size: 2rem;
     }
@@ -1387,7 +1413,7 @@ footer {
     }
 }
 
-/* Small phones */
+
 @media (max-width: 576px) {
     .section-full {
         padding: 3rem 0;
@@ -1421,7 +1447,7 @@ footer {
     }
 }
 
-/* Recruitment Status */
+
 .status-indicator {
     display: flex;
     align-items: center;
